@@ -1,0 +1,11 @@
+## 1. Implementation
+- [ ] 1.1 Initialize Go module and baseline CLI entrypoint
+- [ ] 1.2 Add config loader for `.bilink/settings.toml` and defaults
+- [ ] 1.3 Implement Markdown parser for `[[...]]` and `[text](path)`
+- [ ] 1.4 Build in-memory index (files, outbound refs, inbound refs)
+- [ ] 1.5 Implement `refs` command (text + `--json` output)
+- [ ] 1.6 Implement resolve/lint rules and conflict detection for `check`
+- [ ] 1.7 Implement rename/update engine (strong links only, ambiguity handling)
+- [ ] 1.8 Implement watch mode with Bubble Tea TUI and index persistence
+- [ ] 1.9 Add TS wrapper package that downloads Go binaries for `npx`
+- [ ] 1.10 Add tests per feature (TDD) and update docs
