@@ -11,6 +11,12 @@
   - Read docs/must-guidebook.md and docs/must-docs-taxonomy.md
   - Read docs/must-sop.md
   - Collected file references for batch report
+  - Re-read plan tasks 4-6 for parsing and index work
+  - Implemented Task 4 (link parsing) with TDD
+  - Implemented Task 5 (anchor extraction) with TDD
+  - Implemented Task 6 (scan + index) with TDD and wiki target resolution
+  - Spec reviewed Tasks 4-6 outputs (parser, anchors, scan/index)
+  - Code quality reviewed Tasks 4-6 diffs (no issues found)
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -75,6 +81,8 @@
 | go build | ./... | PASS | PASS | ✅ |
 | go test | ./internal/config -v | PASS | PASS | ✅ |
 | go test | ./internal/resolve -v | PASS | PASS | ✅ |
+| go test | ./internal/parse -v | PASS | PASS | ✅ |
+| go test | ./internal/fs ./internal/index -v | PASS | PASS | ✅ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
@@ -85,6 +93,7 @@
 | 2026-01-28 00:27 | go test failed (missing go-toml module) | 1 | Added dependency via go get github.com/pelletier/go-toml/v2 |
 | 2026-01-28 00:30 | go test failed (missing x/text module) | 1 | Added dependency via go get golang.org/x/text/unicode/norm |
 | 2026-01-28 00:31 | go get bumped go version to 1.24.0 | 1 | Restored go.mod to 1.22 |
+| 2026-01-28 00:40 | index test failed (expected inbound link) | 1 | Resolved wiki targets to file paths when building index |
 
 ## 5-Question Reboot Check
 | Question | Answer |
