@@ -16,6 +16,7 @@
   - Created OpenSpec change proposal files for add-bilink-mvp
   - Validated OpenSpec change add-bilink-mvp (--strict)
   - Checked worktree directories and Git HEAD (no commits)
+  - Created initial commit to enable worktree creation
 - Files created/modified:
   - task_plan.md (created)
   - findings.md (created)
