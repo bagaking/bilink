@@ -28,6 +28,7 @@ This guidebook is a reading map. Keep it stable and index-style; do not duplicat
 - Use taxonomy suffixes and keep ordering consistent.
 - `docs/notes-prd-bilink.md`
 - `docs/architecture-bilink-design.md`
+- `docs/plans/2026-01-27-bilink-mvp.md`
 
 ## Docs Maintenance
 - This guidebook must reference `docs/must-docs-taxonomy.md`.

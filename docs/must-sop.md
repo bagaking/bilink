@@ -19,3 +19,9 @@ Source: `docs/notes-prd-bilink.md`
 - Read this doc before changing product scope or user-facing behavior.
 - Update this doc when requirements or goals change.
 - Regenerate must-sop.md after updating this doc.
+
+### Bilink MVP Implementation Plan
+Source: `docs/plans/2026-01-27-bilink-mvp.md`
+- Read this plan before implementing Bilink MVP tasks.
+- Update this plan when execution steps change.
+- Regenerate must-sop.md after updating this doc.

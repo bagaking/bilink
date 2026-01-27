@@ -9,7 +9,7 @@
 实现 Bilink MVP（CLI + Watch TUI + TS wrapper）并按 OpenSpec 流程提交变更提案与实现。
 
 ## Current Phase
-Phase 2
+Phase 3
 
 ## Phases
 
@@ -21,15 +21,15 @@ Phase 2
 
 ### Phase 2: Planning & Structure
 - [x] Create OpenSpec change proposal (proposal/tasks/design/spec deltas)
-- [ ] Decide on implementation plan and worktree strategy
-- [ ] Document decisions with rationale
-- **Status:** in_progress
+- [x] Decide on implementation plan and worktree strategy
+- [x] Document decisions with rationale
+- **Status:** complete
 
 ### Phase 3: Implementation
 - [ ] Execute plan step by step (TDD)
 - [ ] Implement Go core, CLI, Watch TUI, TS wrapper
 - [ ] Test incrementally
-- **Status:** pending
+- **Status:** in_progress
 
 ### Phase 4: Testing & Verification
 - [ ] Verify quality gates
@@ -55,6 +55,7 @@ Phase 2
 | Balanced update policy (high/medium/low) | Recall/precision trade-off aligned with tooling norms |
 | Default anchor style GitHub; resolve-only | Consistent behavior with minimal risk |
 | Change id `add-bilink-mvp` with `bilink-cli` capability | Single capability for CLI feature set |
+| Worktree path `.worktrees/add-bilink-mvp` | Isolated implementation workspace |
 
 ## Errors Encountered
 | Error | Attempt | Resolution |

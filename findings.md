@@ -21,6 +21,8 @@
 - `openspec validate add-bilink-mvp --strict` passed.
 - No `.worktrees/` or `worktrees/` directory present; `CLAUDE.md` missing.
 - Git HEAD missing (no commits yet); worktree creation will require an initial commit.
+- Worktree created at `.worktrees/add-bilink-mvp`; implementation plan saved at `docs/plans/2026-01-27-bilink-mvp.md`.
+- SOP regenerated to include implementation plan.
 
 ## Technical Decisions
 | Decision | Rationale |
