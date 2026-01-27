@@ -9,6 +9,7 @@
   - Initialized planning files (task_plan.md, findings.md, progress.md)
   - Reviewed planning-with-files templates
   - Read docs/must-guidebook.md and docs/must-docs-taxonomy.md
+  - Read docs/must-sop.md
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -56,6 +57,13 @@
   - Implemented Task 2 (config defaults/loader) with TDD and added TOML dependency
   - Reviewed plan details for resolve/parse tasks
   - Implemented Task 3 (resolve normalization) with TDD and restored go.mod go version
+  - Spec reviewed Task 1 outputs (go.mod + CLI entrypoint)
+  - Spec reviewed Task 2 outputs (config defaults/loader)
+  - Spec reviewed Task 3 outputs (resolve normalization)
+  - Reviewed requesting-code-review templates for code-quality checks
+  - Code quality reviewed Task 1-2 diffs (no issues found)
+  - Code quality reviewed Task 3 diff (no issues found)
+  - Read docs/must-guidebook.md and docs/must-docs-taxonomy.md
 - Files created/modified:
   - progress.md (updated)
 
