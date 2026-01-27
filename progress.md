@@ -54,6 +54,8 @@
   - Verified repo layout and absence of go.mod before Task 1
   - Implemented Task 1 (go.mod + CLI entrypoint) with TDD and build verification
   - Implemented Task 2 (config defaults/loader) with TDD and added TOML dependency
+  - Reviewed plan details for resolve/parse tasks
+  - Implemented Task 3 (resolve normalization) with TDD and restored go.mod go version
 - Files created/modified:
   - progress.md (updated)
 
@@ -63,6 +65,7 @@
 | go test | ./cmd/bilink -v | PASS | PASS | ✅ |
 | go build | ./... | PASS | PASS | ✅ |
 | go test | ./internal/config -v | PASS | PASS | ✅ |
+| go test | ./internal/resolve -v | PASS | PASS | ✅ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
@@ -71,6 +74,8 @@
 | 2026-01-28 00:15 | cat failed for planning-with-files SKILL path | 1 | Located correct path at .codex/skills/planning-with-files/SKILL.md |
 | 2026-01-28 00:22 | rm bilink blocked by policy | 1 | Left binary untracked; avoid committing |
 | 2026-01-28 00:27 | go test failed (missing go-toml module) | 1 | Added dependency via go get github.com/pelletier/go-toml/v2 |
+| 2026-01-28 00:30 | go test failed (missing x/text module) | 1 | Added dependency via go get golang.org/x/text/unicode/norm |
+| 2026-01-28 00:31 | go get bumped go version to 1.24.0 | 1 | Restored go.mod to 1.22 |
 
 ## 5-Question Reboot Check
 | Question | Answer |
