@@ -10,6 +10,7 @@
   - Reviewed planning-with-files templates
   - Read docs/must-guidebook.md and docs/must-docs-taxonomy.md
   - Read docs/must-sop.md
+  - Collected file references for batch report
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
