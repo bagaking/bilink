@@ -30,6 +30,9 @@
   - Implemented Task 13 (npx wrapper skeleton) with TDD
   - Spec reviewed Task 13 outputs (npx wrapper)
   - Code quality reviewed Task 13 diff (no issues found)
+  - Implemented Task 14 (make test includes node wrapper test)
+  - Spec reviewed Task 14 outputs (Makefile quality gate)
+  - Code quality reviewed Task 14 diff (no issues found)
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
