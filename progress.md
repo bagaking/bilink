@@ -100,6 +100,7 @@
   - Merged add-bilink-mvp into main
   - Ran make lint and make test on main
   - Verified SOP regen check unchanged
+  - Removed add-bilink-mvp worktree and deleted branch
 
 ## Test Results
 | Test | Input | Expected | Actual | Status |
@@ -138,6 +139,7 @@
 | 2026-01-28 01:12 | go mod tidy bumped go version to 1.24.0 | 1 | Restored go.mod to 1.22 |
 | 2026-01-28 01:18 | make lint failed after go.mod reset | 1 | Ran go mod tidy; kept go.mod at 1.24.0 |
 | 2026-01-28 01:27 | git pull failed (missing remote ref) | 1 | Proceeded with local merge |
+| 2026-01-28 01:29 | git worktree remove blocked by untracked files | 1 | Re-ran with --force |
 
 ## 5-Question Reboot Check
 | Question | Answer |
