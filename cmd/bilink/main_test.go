@@ -3,23 +3,24 @@ package main
 import (
 	"io"
 	"os"
+	"strings"
 	"testing"
 )
 
-func TestMain_PrintsBootstrap(t *testing.T) {
-	oldStdout := os.Stdout
+func TestRun_MissingCommand(t *testing.T) {
+	oldStderr := os.Stderr
 	r, w, err := os.Pipe()
 	if err != nil {
 		t.Fatalf("pipe: %v", err)
 	}
-	os.Stdout = w
+	os.Stderr = w
 
-	main()
+	code := run([]string{})
 
 	if err := w.Close(); err != nil {
 		t.Fatalf("close writer: %v", err)
 	}
-	os.Stdout = oldStdout
+	os.Stderr = oldStderr
 
 	out, err := io.ReadAll(r)
 	if err != nil {
@@ -29,9 +30,10 @@ func TestMain_PrintsBootstrap(t *testing.T) {
 		t.Fatalf("close reader: %v", err)
 	}
 
-	got := string(out)
-	want := "bilink: MVP bootstrap\n"
-	if got != want {
-		t.Fatalf("unexpected output: got %q want %q", got, want)
+	if code != 1 {
+		t.Fatalf("expected exit code 1, got %d", code)
+	}
+	if !strings.Contains(string(out), "missing command") {
+		t.Fatalf("expected error output, got %q", string(out))
 	}
 }
