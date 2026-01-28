@@ -9,7 +9,7 @@
 实现 Bilink MVP（CLI + Watch TUI + TS wrapper）并按 OpenSpec 流程提交变更提案与实现。
 
 ## Current Phase
-Phase 5
+Complete
 
 ## Phases
 
@@ -38,10 +38,10 @@ Phase 5
 - **Status:** complete
 
 ### Phase 5: Delivery
-- [ ] Review output files
-- [ ] Ensure deliverables are complete
-- [ ] Deliver summary to user
-- **Status:** in_progress
+- [x] Review output files
+- [x] Ensure deliverables are complete
+- [x] Deliver summary to user
+- **Status:** complete
 
 ## Key Questions
 1. OpenSpec change-id and capability split (single spec vs multi-capability)
