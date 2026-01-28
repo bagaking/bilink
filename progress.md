@@ -27,6 +27,9 @@
   - Implemented Task 12 (CLI dispatcher) with TDD
   - Spec reviewed Tasks 10-12 outputs (index store/watch/app)
   - Code quality reviewed Tasks 10-12 diffs (no issues found)
+  - Implemented Task 13 (npx wrapper skeleton) with TDD
+  - Spec reviewed Task 13 outputs (npx wrapper)
+  - Code quality reviewed Task 13 diff (no issues found)
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -100,6 +103,7 @@
 | go test | ./internal/watch ./internal/watch/tui -v | PASS | PASS | ✅ |
 | go test | ./internal/app -v | PASS | PASS | ✅ |
 | go test | ./cmd/bilink -v | PASS | PASS | ✅ |
+| node --test | packages/bilink-npx/test/platform.test.mjs | PASS | PASS | ✅ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
