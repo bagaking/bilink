@@ -35,6 +35,7 @@
   - Code quality reviewed Task 14 diff (no issues found)
   - Ran quality gates: make lint, make test, SOP regen check
   - Reran go mod tidy after lint failure; kept go.mod at 1.24.0 and reverified lint/test
+  - Reverified lint/test and SOP check after final go.mod update
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
