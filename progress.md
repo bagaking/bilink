@@ -17,6 +17,11 @@
   - Implemented Task 6 (scan + index) with TDD and wiki target resolution
   - Spec reviewed Tasks 4-6 outputs (parser, anchors, scan/index)
   - Code quality reviewed Tasks 4-6 diffs (no issues found)
+  - Implemented Task 7 (refs core) with TDD
+  - Implemented Task 8 (conflict detection) with TDD
+  - Implemented Task 9 (rename wiki rewrite) with TDD
+  - Spec reviewed Tasks 7-9 outputs (refs/check/rename)
+  - Code quality reviewed Tasks 7-9 diffs (no issues found)
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -83,6 +88,9 @@
 | go test | ./internal/resolve -v | PASS | PASS | ✅ |
 | go test | ./internal/parse -v | PASS | PASS | ✅ |
 | go test | ./internal/fs ./internal/index -v | PASS | PASS | ✅ |
+| go test | ./internal/refs -v | PASS | PASS | ✅ |
+| go test | ./internal/check -v | PASS | PASS | ✅ |
+| go test | ./internal/rename -v | PASS | PASS | ✅ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
@@ -94,6 +102,7 @@
 | 2026-01-28 00:30 | go test failed (missing x/text module) | 1 | Added dependency via go get golang.org/x/text/unicode/norm |
 | 2026-01-28 00:31 | go get bumped go version to 1.24.0 | 1 | Restored go.mod to 1.22 |
 | 2026-01-28 00:40 | index test failed (expected inbound link) | 1 | Resolved wiki targets to file paths when building index |
+| 2026-01-28 00:45 | multi-tool command parse error (missing command field) | 1 | Re-ran commands sequentially |
 
 ## 5-Question Reboot Check
 | Question | Answer |
