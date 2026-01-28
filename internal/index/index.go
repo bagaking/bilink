@@ -12,9 +12,11 @@ type FileInput struct {
 	Content string
 }
 
+type Link = parse.Link
+
 type Index struct {
-	Outbound map[string][]parse.Link
-	Inbound  map[string][]parse.Link
+	Outbound map[string][]Link
+	Inbound  map[string][]Link
 }
 
 func Build(files []FileInput) Index {
