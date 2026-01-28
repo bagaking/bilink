@@ -26,6 +26,9 @@ test:
 	else \
 		echo "go.mod not found; skipping go test"; \
 	fi
+	@if [ -f packages/bilink-npx/test/platform.test.mjs ]; then \
+		node --test packages/bilink-npx/test/platform.test.mjs; \
+	fi
 
 editor-install:
 	cd apps/editor && $(PNPM) install
