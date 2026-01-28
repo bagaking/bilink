@@ -1,0 +1,8 @@
+{
+  "name": "bilink-npx",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "bilink": "bin/bilink.js"
+  }
+}
