@@ -9,7 +9,7 @@
 实现 Bilink MVP（CLI + Watch TUI + TS wrapper）并按 OpenSpec 流程提交变更提案与实现。
 
 ## Current Phase
-Phase 3
+Phase 4
 
 ## Phases
 
@@ -26,16 +26,16 @@ Phase 3
 - **Status:** complete
 
 ### Phase 3: Implementation
-- [ ] Execute plan step by step (TDD)
-- [ ] Implement Go core, CLI, Watch TUI, TS wrapper
-- [ ] Test incrementally
-- **Status:** in_progress
+- [x] Execute plan step by step (TDD)
+- [x] Implement Go core, CLI, Watch TUI, TS wrapper
+- [x] Test incrementally
+- **Status:** complete
 
 ### Phase 4: Testing & Verification
 - [ ] Verify quality gates
 - [ ] Document test results in progress.md
 - [ ] Fix any issues found
-- **Status:** pending
+- **Status:** in_progress
 
 ### Phase 5: Delivery
 - [ ] Review output files
