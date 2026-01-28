@@ -22,6 +22,11 @@
   - Implemented Task 9 (rename wiki rewrite) with TDD
   - Spec reviewed Tasks 7-9 outputs (refs/check/rename)
   - Code quality reviewed Tasks 7-9 diffs (no issues found)
+  - Implemented Task 10 (index persistence) with TDD
+  - Implemented Task 11 (watch diff + TUI skeleton) with TDD
+  - Implemented Task 12 (CLI dispatcher) with TDD
+  - Spec reviewed Tasks 10-12 outputs (index store/watch/app)
+  - Code quality reviewed Tasks 10-12 diffs (no issues found)
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -91,6 +96,10 @@
 | go test | ./internal/refs -v | PASS | PASS | ✅ |
 | go test | ./internal/check -v | PASS | PASS | ✅ |
 | go test | ./internal/rename -v | PASS | PASS | ✅ |
+| go test | ./internal/index -v | PASS | PASS | ✅ |
+| go test | ./internal/watch ./internal/watch/tui -v | PASS | PASS | ✅ |
+| go test | ./internal/app -v | PASS | PASS | ✅ |
+| go test | ./cmd/bilink -v | PASS | PASS | ✅ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
