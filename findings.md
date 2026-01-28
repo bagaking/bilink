@@ -31,11 +31,13 @@
 | Balanced update policy | Precision/recall balance aligned with tooling norms |
 | Default anchor style GitHub | Widely compatible; minimal risk |
 | Change id `add-bilink-mvp` with `bilink-cli` capability | Single spec for CLI scope |
+| Keep go.mod at 1.24.0 | golangci-lint requires go mod tidy; tidy sets go version to 1.24.0 with current toolchain |
 
 ## Issues Encountered
 | Issue | Resolution |
 |-------|------------|
 | planning-with-files templates needed | Created task_plan.md and seeded findings/progress |
+| make lint failed due to module needing tidy | Ran go mod tidy and retained go.mod at 1.24.0 |
 
 ## Resources
 - `docs/notes-prd-bilink.md`

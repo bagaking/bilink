@@ -34,6 +34,7 @@
   - Spec reviewed Task 14 outputs (Makefile quality gate)
   - Code quality reviewed Task 14 diff (no issues found)
   - Ran quality gates: make lint, make test, SOP regen check
+  - Reran go mod tidy after lint failure; kept go.mod at 1.24.0 and reverified lint/test
   - Read docs/must-sop.md and openspec/AGENTS.md
   - Read openspec/project.md and confirmed no existing specs
   - Confirmed no active OpenSpec changes
@@ -126,6 +127,7 @@
 | 2026-01-28 00:45 | multi-tool command parse error (missing command field) | 1 | Re-ran commands sequentially |
 | 2026-01-28 01:10 | make lint failed (golangci-lint no go files) | 1 | Ran go mod tidy, reran make lint |
 | 2026-01-28 01:12 | go mod tidy bumped go version to 1.24.0 | 1 | Restored go.mod to 1.22 |
+| 2026-01-28 01:18 | make lint failed after go.mod reset | 1 | Ran go mod tidy; kept go.mod at 1.24.0 |
 
 ## 5-Question Reboot Check
 | Question | Answer |
