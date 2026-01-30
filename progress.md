@@ -149,3 +149,18 @@
 | What's the goal? | Implement Bilink MVP per PRD/design/OpenSpec |
 | What have I learned? | See findings.md |
 | What have I done? | Completed implementation, verification, and main merge |
+
+## Session: 2026-01-30
+
+### Phase 1: Requirements & Discovery
+- **Status:** in_progress
+- **Started:** 2026-01-30 00:00
+- Actions taken:
+  - Loaded required skills (using-superpowers, planning-with-files, brainstorming)
+  - Read docs/must-guidebook.md, docs/must-docs-taxonomy.md, docs/must-sop.md
+  - Read openspec/AGENTS.md
+  - Read task_plan.md and findings.md
+  - Created worktree .worktrees/complete-cli (branch complete-cli)
+  - Ran baseline tests in worktree (make test)
+  - Wrote CLI completion design doc and implementation plan
+  - Regenerated must-sop.md after new plan/design frontmatter

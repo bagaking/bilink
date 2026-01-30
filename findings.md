@@ -32,6 +32,8 @@
 | Default anchor style GitHub | Widely compatible; minimal risk |
 | Change id `add-bilink-mvp` with `bilink-cli` capability | Single spec for CLI scope |
 | Keep go.mod at 1.24.0 | golangci-lint requires go mod tidy; tidy sets go version to 1.24.0 with current toolchain |
+| GitHub Releases asset naming | `bilink-<os>-<arch>` (Windows adds `.exe`) |
+| CLI completion approach | Add `internal/service` layer (Option B) to orchestrate commands |
 
 ## Issues Encountered
 | Issue | Resolution |

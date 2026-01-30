@@ -25,3 +25,15 @@ Source: `docs/plans/2026-01-27-bilink-mvp.md`
 - Read this plan before implementing Bilink MVP tasks.
 - Update this plan when execution steps change.
 - Regenerate must-sop.md after updating this doc.
+
+### Bilink CLI 完整实现设计
+Source: `docs/plans/2026-01-30-bilink-cli-design.md`
+- Read this doc before implementing service layer or CLI wiring changes.
+- Update this doc when command orchestration or output formats change.
+- Regenerate must-sop.md after updating this doc.
+
+### Bilink CLI 完整实现计划
+Source: `docs/plans/2026-01-30-bilink-cli-implementation.md`
+- Read this plan before implementing Bilink CLI completion tasks.
+- Update this plan when steps or files change.
+- Regenerate must-sop.md after updating this doc.
