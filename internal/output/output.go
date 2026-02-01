@@ -12,9 +12,16 @@ type RefsPayload struct {
 	Inbound  any    `json:"inbound"`
 }
 
+type CheckGroup struct {
+	Key   string   `json:"key"`
+	Paths []string `json:"paths"`
+}
+
 type CheckPayload struct {
-	Errors   []string `json:"errors"`
-	Warnings []string `json:"warnings"`
+	Errors        []string     `json:"errors"`
+	Warnings      []string     `json:"warnings"`
+	ErrorGroups   []CheckGroup `json:"errorGroups"`
+	WarningGroups []CheckGroup `json:"warningGroups"`
 }
 
 type RenamePayload struct {
@@ -37,7 +44,27 @@ func TextRefs(p RefsPayload) string {
 }
 
 func TextCheck(p CheckPayload) string {
-	return fmt.Sprintf("errors: %d\nwarnings: %d", len(p.Errors), len(p.Warnings))
+	var b strings.Builder
+	b.WriteString(fmt.Sprintf("errors: %d\nwarnings: %d\n", len(p.Errors), len(p.Warnings)))
+	if len(p.ErrorGroups) > 0 {
+		b.WriteString("\nerror groups:\n")
+		for _, g := range p.ErrorGroups {
+			b.WriteString(fmt.Sprintf("- %s\n", g.Key))
+			for _, path := range g.Paths {
+				b.WriteString(fmt.Sprintf("  - %s\n", path))
+			}
+		}
+	}
+	if len(p.WarningGroups) > 0 {
+		b.WriteString("\nwarning groups:\n")
+		for _, g := range p.WarningGroups {
+			b.WriteString(fmt.Sprintf("- %s\n", g.Key))
+			for _, path := range g.Paths {
+				b.WriteString(fmt.Sprintf("  - %s\n", path))
+			}
+		}
+	}
+	return strings.TrimRight(b.String(), "\n")
 }
 
 func TextRename(p RenamePayload) string {
