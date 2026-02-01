@@ -7,12 +7,13 @@ import (
 
 	"github.com/bagaking/bilink/internal/output"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 )
 
 type Model struct {
 	Status        string
-	Added         int
-	Removed       int
+	Added         []string
+	Removed       []string
 	Asking        bool
 	ConfigSummary string
 
@@ -20,11 +21,26 @@ type Model struct {
 	showConfig bool
 }
 
+const (
+	tickInterval = 250 * time.Millisecond
+	maxChanges   = 8
+)
+
+var askFrames = []string{"", ".", "..", "..."}
+
+var (
+	titleStyle  = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#7DF9FF"))
+	panelStyle  = lipgloss.NewStyle().Border(lipgloss.RoundedBorder()).BorderForeground(lipgloss.Color("#7D5FFF")).Padding(0, 1)
+	accentStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#FF6AD5"))
+	mutedStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("#888888"))
+	footerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#7DF9FF"))
+)
+
 func NewModel(payload output.WatchPayload, configSummary string) Model {
 	return Model{
 		Status:        "watching",
-		Added:         len(payload.Added),
-		Removed:       len(payload.Removed),
+		Added:         payload.Added,
+		Removed:       payload.Removed,
 		Asking:        true,
 		ConfigSummary: configSummary,
 	}
@@ -37,10 +53,6 @@ func Run(payload output.WatchPayload, configSummary string) error {
 }
 
 type tickMsg struct{}
-
-const tickInterval = 250 * time.Millisecond
-
-var askFrames = []string{"", ".", "..", "..."}
 
 func (m Model) Init() tea.Cmd {
 	return tea.Tick(tickInterval, func(time.Time) tea.Msg { return tickMsg{} })
@@ -71,21 +83,51 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m Model) View() string {
-	var b strings.Builder
-	b.WriteString("Bilink Watch\n")
-	b.WriteString(fmt.Sprintf("status: %s\n", m.Status))
-	b.WriteString(fmt.Sprintf("added: %d\nremoved: %d\n", m.Added, m.Removed))
-	if m.Asking {
-		b.WriteString(fmt.Sprintf("ASK%s  (y=accept, c=config, q=quit)\n", askFrames[m.frame]))
-	} else {
-		b.WriteString("press q to quit\n")
+	title := titleStyle.Render("BILINK WATCH")
+	stats := panelStyle.Render(strings.Join([]string{
+		accentStyle.Render(fmt.Sprintf("STATUS: %s", strings.ToUpper(m.Status))),
+		fmt.Sprintf("ADDED: %d", len(m.Added)),
+		fmt.Sprintf("REMOVED: %d", len(m.Removed)),
+	}, "\n"))
+
+	changes := panelStyle.Render(renderChanges(m.changeLines()))
+	body := lipgloss.JoinHorizontal(lipgloss.Top, stats, "  ", changes)
+
+	footer := footerStyle.Render(fmt.Sprintf("ASK%s  :help :config  y=accept  q=quit", askFrames[m.frame]))
+	if !m.Asking {
+		footer = mutedStyle.Render("press q to quit")
 	}
+
+	sections := []string{title, body}
 	if m.showConfig && m.ConfigSummary != "" {
-		b.WriteString("\nconfig:\n")
-		b.WriteString(m.ConfigSummary)
-		if !strings.HasSuffix(m.ConfigSummary, "\n") {
-			b.WriteString("\n")
-		}
+		sections = append(sections, panelStyle.Render("CONFIG\n"+strings.TrimRight(m.ConfigSummary, "\n")))
 	}
-	return b.String()
+	sections = append(sections, footer)
+
+	return lipgloss.JoinVertical(lipgloss.Left, sections...)
+}
+
+func (m Model) changeLines() []string {
+	var lines []string
+	for _, path := range m.Added {
+		lines = append(lines, "+ "+path)
+	}
+	for _, path := range m.Removed {
+		lines = append(lines, "- "+path)
+	}
+	return tail(lines, maxChanges)
+}
+
+func renderChanges(lines []string) string {
+	if len(lines) == 0 {
+		return mutedStyle.Render("no changes")
+	}
+	return strings.Join(lines, "\n")
+}
+
+func tail(items []string, max int) []string {
+	if len(items) <= max {
+		return items
+	}
+	return items[len(items)-max:]
 }
