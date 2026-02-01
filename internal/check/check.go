@@ -6,7 +6,12 @@ type File struct {
 	LintKey    string
 }
 
-func Detect(files []File) ([]string, []string) {
+type Group struct {
+	Key   string
+	Paths []string
+}
+
+func Detect(files []File) ([]Group, []Group) {
 	resolveSeen := map[string][]string{}
 	lintSeen := map[string][]string{}
 	for _, f := range files {
@@ -15,16 +20,16 @@ func Detect(files []File) ([]string, []string) {
 			lintSeen[f.LintKey] = append(lintSeen[f.LintKey], f.Path)
 		}
 	}
-	var errs []string
+	var errs []Group
 	for key, paths := range resolveSeen {
 		if len(paths) > 1 {
-			errs = append(errs, key)
+			errs = append(errs, Group{Key: key, Paths: paths})
 		}
 	}
-	var warns []string
+	var warns []Group
 	for key, paths := range lintSeen {
 		if len(paths) > 1 {
-			warns = append(warns, key)
+			warns = append(warns, Group{Key: key, Paths: paths})
 		}
 	}
 	return errs, warns
