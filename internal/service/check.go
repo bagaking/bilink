@@ -31,5 +31,26 @@ func RunCheck(input CheckInput) (output.CheckPayload, error) {
 		})
 	}
 	errs, warns := check.Detect(files)
-	return output.CheckPayload{Errors: errs, Warnings: warns}, nil
+	return output.CheckPayload{
+		Errors:        groupKeys(errs),
+		Warnings:      groupKeys(warns),
+		ErrorGroups:   toGroups(errs),
+		WarningGroups: toGroups(warns),
+	}, nil
+}
+
+func groupKeys(groups []check.Group) []string {
+	keys := make([]string, 0, len(groups))
+	for _, g := range groups {
+		keys = append(keys, g.Key)
+	}
+	return keys
+}
+
+func toGroups(groups []check.Group) []output.CheckGroup {
+	out := make([]output.CheckGroup, 0, len(groups))
+	for _, g := range groups {
+		out = append(out, output.CheckGroup{Key: g.Key, Paths: g.Paths})
+	}
+	return out
 }
