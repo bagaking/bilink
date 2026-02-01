@@ -37,3 +37,9 @@ Source: `docs/plans/2026-01-30-bilink-cli-implementation.md`
 - Read this plan before implementing Bilink CLI completion tasks.
 - Update this plan when steps or files change.
 - Regenerate must-sop.md after updating this doc.
+
+### Bilink Check 明细输出 + Watch 赛博朋克 TUI
+Source: `docs/plans/2026-02-01-bilink-check-watch-ui.md`
+- Read this plan before implementing check detail output or watch TUI styling.
+- Update this plan when steps or files change.
+- Regenerate must-sop.md after updating this doc.

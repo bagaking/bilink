@@ -6,10 +6,10 @@
 -->
 
 ## Goal
-完成 Bilink CLI 的完整实现：引入 service 层并贯通 refs/rename/check/watch/--json 与 npx 自动下载。
+升级 `check` 输出为分组明细 + JSON 结构化，并将 `watch` TUI 升级为赛博朋克风格（含最近变更列表）。
 
 ## Current Phase
-Phase 8
+Phase 9
 
 ## Phases
 
@@ -60,6 +60,22 @@ Phase 8
 - [x] Ensure deliverables are complete
 - [x] Deliver summary to user
 - **Status:** complete
+
+### Phase 9: Planning (Check Detail + Cyberpunk Watch)
+- [x] Draft implementation plan doc
+- [x] Update must-sop.md for new plan frontmatter
+- **Status:** complete
+
+### Phase 10: Implementation
+- [ ] Implement check group details (text + json)
+- [ ] Implement watch cyberpunk TUI (layout + change list)
+- [ ] Update README
+- **Status:** in_progress
+
+### Phase 11: Testing & Verification
+- [ ] Run quality gates (make lint/test + SOP check)
+- [ ] Document results in progress.md
+- **Status:** pending
 
 ## Key Questions
 1. OpenSpec change-id and capability split (single spec vs multi-capability)

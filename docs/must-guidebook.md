@@ -31,6 +31,7 @@ This guidebook is a reading map. Keep it stable and index-style; do not duplicat
 - `docs/plans/2026-01-27-bilink-mvp.md`
 - `docs/plans/2026-01-30-bilink-cli-design.md`
 - `docs/plans/2026-01-30-bilink-cli-implementation.md`
+- `docs/plans/2026-02-01-bilink-check-watch-ui.md`
 
 ## Docs Maintenance
 - This guidebook must reference `docs/must-docs-taxonomy.md`.
