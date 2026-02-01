@@ -1,10 +1,16 @@
 package tui
 
-import "testing"
+import (
+	"strings"
+	"testing"
 
-func TestModelInit(t *testing.T) {
-	m := NewModel()
-	if m.Status == "" {
-		t.Fatalf("expected status")
+	"github.com/bagaking/bilink/internal/output"
+)
+
+func TestModelViewIncludesAsk(t *testing.T) {
+	m := NewModel(output.WatchPayload{Added: []string{"a.md"}}, "config")
+	view := m.View()
+	if !strings.Contains(view, "ASK") {
+		t.Fatalf("expected ask prompt")
 	}
 }

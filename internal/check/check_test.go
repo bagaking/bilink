@@ -2,13 +2,16 @@ package check
 
 import "testing"
 
-func TestDetectConflicts(t *testing.T) {
-	files := []File{{Path: "a.md", ResolveKey: "foo"}, {Path: "b.md", ResolveKey: "foo"}}
-	errs, warns := Detect(files)
-	if len(errs) != 1 {
-		t.Fatalf("expected conflict error")
+func TestDetectWarnings(t *testing.T) {
+	files := []File{
+		{Path: "a.md", ResolveKey: "foo", LintKey: "foo"},
+		{Path: "b.md", ResolveKey: "bar", LintKey: "foo"},
 	}
-	if len(warns) != 0 {
-		t.Fatalf("expected no warnings")
+	errs, warns := Detect(files)
+	if len(errs) != 0 {
+		t.Fatalf("expected no errors")
+	}
+	if len(warns) != 1 {
+		t.Fatalf("expected warning")
 	}
 }

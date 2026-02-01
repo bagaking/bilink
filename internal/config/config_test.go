@@ -9,7 +9,7 @@ import (
 func TestLoadConfig_Defaults(t *testing.T) {
 	dir := t.TempDir()
 	cfg, err := Load(ConfigOpts{
-		Roots: []string{dir},
+		Roots:      []string{dir},
 		ConfigPath: filepath.Join(dir, ".bilink", "settings.toml"),
 	})
 	if err != nil {

@@ -164,3 +164,29 @@
   - Ran baseline tests in worktree (make test)
   - Wrote CLI completion design doc and implementation plan
   - Regenerated must-sop.md after new plan/design frontmatter
+
+## Session: 2026-01-31
+
+### Phase 6: CLI Completion (Service Layer)
+- **Status:** in_progress
+- **Started:** 2026-01-31 00:30
+- Actions taken:
+  - Read docs/must-guidebook.md, docs/must-docs-taxonomy.md, docs/must-sop.md
+  - Implemented service types, scan/index orchestration, refs service, check service
+  - Added output payloads (text + json) and tests
+  - Extended check.Detect with warnings
+  - Implemented rename service with ambiguity guard + markdown anchor rewrite
+  - Implemented watch service and Bubble Tea TUI (ASK animation + config toggle)
+  - Wired CLI to service and watch TUI, added config summary helper
+  - Implemented npx auto-download + releaseUrl
+  - Added tests across service/output/rename/watch/tui
+  - Updated CLI implementation plan addendum
+
+### Phase 7: Testing & Verification
+- **Status:** in_progress
+- Actions taken:
+  - go test ./... (pass)
+  - node --test packages/bilink-npx/test/platform.test.mjs (pass)
+  - make lint (pass)
+  - make test (pass)
+  - node scripts/generate-sop.mjs (no diff)

@@ -837,6 +837,15 @@ git commit -m "feat: wire cli to service"
 
 ---
 
+### Addendum: Watch TUI + Rename Ambiguity (Refinement)
+
+**Notes:** 由于 PRD/Spec 对 watch 交互与 rename 歧义处理有额外要求，在 Task 6-8 上追加以下细化点：
+- Rename: 增加 `Interactive`/`Extensions`/`ResolveRules`，默认遇到 resolve 冲突直接报错；`--interactive` 允许继续。
+- Markdown rewrite: 支持 `(path#anchor)`，仅替换路径并保留 anchor。
+- Watch: 使用 Bubble Tea 渲染 TUI，包含 ASK 动画与 `c` 键查看当前配置摘要。
+
+---
+
 ### Task 9: npx 自动下载 (TDD)
 
 **Files:**

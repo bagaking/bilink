@@ -8,3 +8,9 @@ func TestRunUnknownCommand(t *testing.T) {
 		t.Fatalf("expected error")
 	}
 }
+
+func TestRunRefsMissingArg(t *testing.T) {
+	if err := Run([]string{"refs"}); err == nil {
+		t.Fatalf("expected error")
+	}
+}

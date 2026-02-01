@@ -7,15 +7,25 @@ type File struct {
 }
 
 func Detect(files []File) ([]string, []string) {
-	seen := map[string][]string{}
+	resolveSeen := map[string][]string{}
+	lintSeen := map[string][]string{}
 	for _, f := range files {
-		seen[f.ResolveKey] = append(seen[f.ResolveKey], f.Path)
+		resolveSeen[f.ResolveKey] = append(resolveSeen[f.ResolveKey], f.Path)
+		if f.LintKey != "" {
+			lintSeen[f.LintKey] = append(lintSeen[f.LintKey], f.Path)
+		}
 	}
 	var errs []string
-	for key, paths := range seen {
+	for key, paths := range resolveSeen {
 		if len(paths) > 1 {
 			errs = append(errs, key)
 		}
 	}
-	return errs, nil
+	var warns []string
+	for key, paths := range lintSeen {
+		if len(paths) > 1 {
+			warns = append(warns, key)
+		}
+	}
+	return errs, warns
 }

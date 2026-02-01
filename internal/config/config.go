@@ -17,9 +17,13 @@ type Config struct {
 	Index     Index     `toml:"index"`
 }
 
-type Workspace struct{ Roots []string `toml:"roots"` }
+type Workspace struct {
+	Roots []string `toml:"roots"`
+}
 
-type Scan struct{ Extensions []string `toml:"extensions"` }
+type Scan struct {
+	Extensions []string `toml:"extensions"`
+}
 
 type Resolve struct {
 	CaseInsensitive      bool     `toml:"caseInsensitive"`
@@ -39,7 +43,9 @@ type Anchors struct {
 	Mode  string `toml:"mode"`
 }
 
-type Update struct{ Mode string `toml:"mode"` }
+type Update struct {
+	Mode string `toml:"mode"`
+}
 
 type Index struct {
 	Path             string `toml:"path"`

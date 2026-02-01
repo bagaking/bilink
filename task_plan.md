@@ -9,7 +9,7 @@
 完成 Bilink CLI 的完整实现：引入 service 层并贯通 refs/rename/check/watch/--json 与 npx 自动下载。
 
 ## Current Phase
-Phase 6
+Phase 8
 
 ## Phases
 
@@ -44,22 +44,22 @@ Phase 6
 - **Status:** complete
 
 ### Phase 6: CLI Completion (Service Layer)
-- [ ] Design service layer and update docs
-- [ ] Implement service orchestration for refs/check/rename/watch
-- [ ] Implement JSON/text outputs
-- **Status:** in_progress
+- [x] Design service layer and update docs
+- [x] Implement service orchestration for refs/check/rename/watch
+- [x] Implement JSON/text outputs
+- **Status:** complete
 
 ### Phase 7: Testing & Verification
-- [ ] Verify quality gates
-- [ ] Document test results in progress.md
-- [ ] Fix any issues found
-- **Status:** pending
+- [x] Verify quality gates
+- [x] Document test results in progress.md
+- [x] Fix any issues found
+- **Status:** complete
 
 ### Phase 8: Delivery
-- [ ] Review output files
-- [ ] Ensure deliverables are complete
-- [ ] Deliver summary to user
-- **Status:** pending
+- [x] Review output files
+- [x] Ensure deliverables are complete
+- [x] Deliver summary to user
+- **Status:** complete
 
 ## Key Questions
 1. OpenSpec change-id and capability split (single spec vs multi-capability)
