@@ -212,3 +212,18 @@
   - Chose watch TUI target (C + cyberpunk)
   - Drafted implementation plan doc
   - Updated task_plan.md phases for new scope
+
+### Phase 10: Implementation
+- **Status:** complete
+- Actions taken:
+  - Implemented check group detection + grouped output
+  - Added service payload mapping for groups
+  - Upgraded watch TUI to cyberpunk layout with change list (lipgloss)
+  - Updated README for new check/watch behavior
+
+### Phase 11: Testing & Verification
+- **Status:** complete
+- Actions taken:
+  - make lint (pass)
+  - make test (pass)
+  - node scripts/generate-sop.mjs && git diff --exit-code docs/must-sop.md (pass)

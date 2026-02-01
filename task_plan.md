@@ -9,7 +9,7 @@
 升级 `check` 输出为分组明细 + JSON 结构化，并将 `watch` TUI 升级为赛博朋克风格（含最近变更列表）。
 
 ## Current Phase
-Phase 9
+Complete
 
 ## Phases
 
@@ -67,15 +67,15 @@ Phase 9
 - **Status:** complete
 
 ### Phase 10: Implementation
-- [ ] Implement check group details (text + json)
-- [ ] Implement watch cyberpunk TUI (layout + change list)
-- [ ] Update README
-- **Status:** in_progress
+- [x] Implement check group details (text + json)
+- [x] Implement watch cyberpunk TUI (layout + change list)
+- [x] Update README
+- **Status:** complete
 
 ### Phase 11: Testing & Verification
-- [ ] Run quality gates (make lint/test + SOP check)
-- [ ] Document results in progress.md
-- **Status:** pending
+- [x] Run quality gates (make lint/test + SOP check)
+- [x] Document results in progress.md
+- **Status:** complete
 
 ## Key Questions
 1. OpenSpec change-id and capability split (single spec vs multi-capability)
