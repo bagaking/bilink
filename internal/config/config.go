@@ -3,6 +3,7 @@ package config
 import (
 	"errors"
 	"os"
+	"path/filepath"
 
 	"github.com/pelletier/go-toml/v2"
 )
@@ -83,12 +84,18 @@ func Load(opts ConfigOpts) (Config, error) {
 	if len(opts.Roots) > 0 {
 		cfg.Workspace.Roots = opts.Roots
 	}
-	if opts.ConfigPath == "" {
-		return cfg, nil
+	configPath := opts.ConfigPath
+	explicitConfig := configPath != ""
+	if configPath == "" {
+		root := "."
+		if len(cfg.Workspace.Roots) > 0 {
+			root = cfg.Workspace.Roots[0]
+		}
+		configPath = filepath.Join(root, ".bilink", "settings.toml")
 	}
-	data, err := os.ReadFile(opts.ConfigPath)
+	data, err := os.ReadFile(configPath)
 	if err != nil {
-		if errors.Is(err, os.ErrNotExist) {
+		if errors.Is(err, os.ErrNotExist) && !explicitConfig {
 			return cfg, nil
 		}
 		return Config{}, err
