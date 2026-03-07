@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "feat_id": "f-20260127-add-bilink-mvp",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Initialize Go module and baseline CLI entrypoint",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.1 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-002",
+      "title": "Add config loader for .bilink/settings.toml and defaults",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.2 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-003",
+      "title": "Implement Markdown parser for [[...]] and [text](path)",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.3 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-004",
+      "title": "Build in-memory index (files, outbound refs, inbound refs)",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.4 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-005",
+      "title": "Implement refs command (text + --json output)",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.5 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-006",
+      "title": "Implement resolve/lint rules and conflict detection for check",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.6 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-007",
+      "title": "Implement rename/update engine (strong links only, ambiguity handling)",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.7 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-008",
+      "title": "Implement watch mode with Bubble Tea TUI and index persistence",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.8 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-009",
+      "title": "Add TS wrapper package that downloads Go binaries for npx",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.9 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    },
+    {
+      "id": "T-010",
+      "title": "Add tests per feature (TDD) and update docs",
+      "status": "done",
+      "summary": "Historical OpenSpec task 1.10 migrated into feature-tracker.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from openspec/changes/add-bilink-mvp/tasks.md after the implementation already existed in the repository."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "VALID",
+  "project_root": "<project-root>",
+  "manifest_path": "<skill-dir>/references/required-reading-manifest.json",
+  "manifest_sha256": "183ff213b8dac773c78130570927aaad7a93e1ab4c34386540f5d3b8f25fb6a9",
+  "entries": [
+    {
+      "id": "feature-tracker-skill-contract",
+      "type": "file",
+      "location": "../SKILL.md",
+      "resolved_location": "<skill-dir>/SKILL.md",
+      "required": true,
+      "exists": true,
+      "sha256": "26f1221acabd9075e552c34abb486be460b1c6422838b4a08c35403ab0789bbb",
+      "error": ""
+    },
+    {
+      "id": "feature-tracker-readme",
+      "type": "file",
+      "location": "../README.md",
+      "resolved_location": "<skill-dir>/README.md",
+      "required": true,
+      "exists": true,
+      "sha256": "e111b4f2cf0a7570ba949608111bbc65ab2a83fd5da3ad286654697570eb9d7f",
+      "error": ""
+    },
+    {
+      "id": "feature-tracker-contract",
+      "type": "file",
+      "location": "../../../../docs/specs/feature-tracker-contract.md",
+      "resolved_location": "<bagakit-root>/docs/specs/feature-tracker-contract.md",
+      "required": true,
+      "exists": true,
+      "sha256": "f19eb4bd368142555903eae13ad5d18e08d758ac5a187fc4fc5e53850d68722d",
+      "error": ""
+    }
+  ]
+}

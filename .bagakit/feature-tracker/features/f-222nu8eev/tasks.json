@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "feat_id": "f-222nu8eev",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Draft OpenSpec change for canonical edge model and refs/check behavior",
+      "status": "todo",
+      "summary": "Create the OpenSpec proposal, design notes, task checklist, and bilink-cli spec deltas for the canonical edge model plus refs/check upgrade.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Must include explicit non-goals for rename engine, watch state machine, block refs, and anchor auto-rewrite."
+      ]
+    },
+    {
+      "id": "T-002",
+      "title": "Validate and review the OpenSpec proposal",
+      "status": "todo",
+      "summary": "Run strict OpenSpec validation and review the proposed behavior against PRD, architecture, and the existing researcher topic before implementation starts.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Expected gate includes openspec validation plus feature-tracker validation."
+      ]
+    },
+    {
+      "id": "T-003",
+      "title": "Implement canonical edge model after approval",
+      "status": "todo",
+      "summary": "Implement the shared edge schema and resolver only after the OpenSpec change is approved.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Use TDD fixtures for relative Markdown targets, duplicate basenames, unresolved links, anchors, and source-aware refs."
+      ]
+    },
+    {
+      "id": "T-004",
+      "title": "Upgrade refs and check on top of canonical edges",
+      "status": "todo",
+      "summary": "Make refs/check consume canonical edges and emit source-aware JSON/text diagnostics for resolved, unresolved, and ambiguous explicit links.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Do not expand into rename/watch behavior in this feature."
+      ]
+    }
+  ]
+}

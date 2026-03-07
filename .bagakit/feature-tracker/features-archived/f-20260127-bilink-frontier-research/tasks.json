@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "feat_id": "f-20260127-bilink-frontier-research",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Scope and workspace setup",
+      "status": "done",
+      "summary": "Confirmed research goal, read required skills, and set the researcher workspace contract.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from root task_plan.md Phase 1."
+      ]
+    },
+    {
+      "id": "T-002",
+      "title": "Evidence collection",
+      "status": "done",
+      "summary": "Collected representative sources across product semantics, systems architecture, and AI/agent workflows.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from root task_plan.md Phase 2."
+      ]
+    },
+    {
+      "id": "T-003",
+      "title": "Summarization and topic indexing",
+      "status": "done",
+      "summary": "Wrote source cards, reusable summaries, topic index, and local implementation-plan artifacts under the researcher topic.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from root task_plan.md Phase 3."
+      ]
+    },
+    {
+      "id": "T-004",
+      "title": "Gap analysis",
+      "status": "done",
+      "summary": "Compared Bilink against the research corpus and identified optimization opportunities centered on canonical edges, controlled rename, durable watch state, and agent-native extensions.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from root task_plan.md Phase 4."
+      ]
+    },
+    {
+      "id": "T-005",
+      "title": "Next implementation plan",
+      "status": "done",
+      "summary": "Produced the recommended implementation sequence: OpenSpec change, canonical edge model, refs/check upgrade, two-phase rename, real watch, then agent-native extension layer.",
+      "gate_result": null,
+      "last_gate_commands": [],
+      "last_commit_hash": null,
+      "notes": [
+        "Migrated from root task_plan.md Phase 5."
+      ]
+    }
+  ]
+}

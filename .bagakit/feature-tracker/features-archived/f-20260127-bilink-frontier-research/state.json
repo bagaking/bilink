@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "feat_id": "f-20260127-bilink-frontier-research",
+  "title": "Bilink Frontier Research and Next Plan",
+  "slug": "bilink-frontier-research",
+  "goal": "Build reusable Bilink research evidence, summarize frontier practices, identify optimization space, and produce the next implementation plan.",
+  "status": "archived",
+  "workspace_mode": "current_tree",
+  "base_ref": "main",
+  "branch": "",
+  "worktree_name": "",
+  "worktree_path": "",
+  "current_task_id": null,
+  "counters": {
+    "gate_fail_streak": 0,
+    "no_progress_rounds": 0,
+    "round_count": 0
+  },
+  "gate": {
+    "last_result": null,
+    "last_task_id": null,
+    "last_check_commands": [],
+    "last_log_path": null
+  },
+  "history": [
+    {
+      "action": "planning_files_migrated",
+      "detail": "imported completed research planning into feature-tracker while preserving researcher topic time anchors"
+    },
+    {
+      "action": "feat_archived",
+      "detail": "moved + cleaned"
+    }
+  ],
+  "closed_from_status": "done",
+  "archived_cleanup": {
+    "workspace_mode": "current_tree",
+    "base_ref": "main",
+    "branch_merged": false,
+    "worktree_removed": false,
+    "worktree_pruned": false,
+    "branch_deleted": false,
+    "note": "worktree mode removes/prunes worktree and deletes merged branch; current_tree/proposal_only only archive feat metadata",
+    "preserved_root_entries": [
+      "artifacts/closeout-preserved-root/gate",
+      "artifacts/closeout-preserved-root/proposal.md",
+      "artifacts/closeout-preserved-root/spec-deltas",
+      "artifacts/closeout-preserved-root/summary.md",
+      "artifacts/closeout-preserved-root/tasks.md"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "generated_by": "bagakit-feature-tracker",
+  "features": [
+    {
+      "feat_id": "f-20260127-add-bilink-mvp",
+      "title": "Add Bilink MVP (CLI + Watch TUI + npx wrapper)",
+      "status": "archived",
+      "workspace_mode": "current_tree",
+      "branch": "",
+      "worktree_name": ""
+    },
+    {
+      "feat_id": "f-20260127-bilink-frontier-research",
+      "title": "Bilink Frontier Research and Next Plan",
+      "status": "archived",
+      "workspace_mode": "current_tree",
+      "branch": "",
+      "worktree_name": ""
+    },
+    {
+      "feat_id": "f-222nu8eev",
+      "title": "Canonical Edge Model and Refs/Check Upgrade",
+      "status": "proposal",
+      "workspace_mode": "proposal_only",
+      "branch": "",
+      "worktree_name": ""
+    }
+  ],
+  "feature_id_issuance": {
+    "scheme": "feature-tracker-id-v1-c3n2g4",
+    "next_cursor": 1
+  }
+}
