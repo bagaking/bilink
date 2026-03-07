@@ -4,7 +4,7 @@ required: false
 sop:
   - Read this plan before implementing Bilink CLI completion tasks.
   - Update this plan when steps or files change.
-  - Regenerate must-sop.md after updating this doc.
+  - Refresh shared system pages after updating this doc.
 ---
 # Bilink CLI 完整实现计划
 
@@ -922,7 +922,7 @@ Expected: PASS
 Run: `make test`
 Expected: PASS
 
-Run: `node scripts/generate-sop.mjs && git diff --exit-code docs/must-sop.md`
+Run: `sh "$BAGAKIT_LIVING_KNOWLEDGE_SKILL_DIR/scripts/bagakit-living-knowledge.sh" index --root . && git diff --exit-code docs/must-guidebook.md docs/must-sop.md`
 Expected: PASS
 
 **Step 2: Commit**

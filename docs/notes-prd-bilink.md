@@ -4,7 +4,7 @@ required: true
 sop:
   - Read this doc before changing product scope or user-facing behavior.
   - Update this doc when requirements or goals change.
-  - Regenerate must-sop.md after updating this doc.
+  - Refresh shared system pages after updating this doc.
 ---
 # PRD: Bilink 双向链接工具（MVP + Watch TUI）
 
@@ -24,7 +24,7 @@ Bilink 是一个面向本地文件系统的双向链接工具，支持在一组�
 These commands must pass for every user story:
 - `make lint`
 - `make test`
-- `node scripts/generate-sop.mjs && git diff --exit-code docs/must-sop.md`
+- `sh "$BAGAKIT_LIVING_KNOWLEDGE_SKILL_DIR/scripts/bagakit-living-knowledge.sh" index --root . && git diff --exit-code docs/must-guidebook.md docs/must-sop.md`
 
 Manual TUI verification is not required.
 

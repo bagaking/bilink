@@ -4,7 +4,7 @@ required: false
 sop:
   - Read this plan before implementing check detail output or watch TUI styling.
   - Update this plan when steps or files change.
-  - Regenerate must-sop.md after updating this doc.
+  - Refresh shared system pages after updating this doc.
 ---
 # Bilink Check 明细输出 + Watch 赛博朋克 TUI Implementation Plan
 
@@ -300,7 +300,6 @@ git commit -m "docs: update readme for check/watch"
 Run:
 - `make lint`
 - `make test`
-- `node scripts/generate-sop.mjs && git diff --exit-code docs/must-sop.md`
+- `sh "$BAGAKIT_LIVING_KNOWLEDGE_SKILL_DIR/scripts/bagakit-living-knowledge.sh" index --root . && git diff --exit-code docs/must-guidebook.md docs/must-sop.md`
 
 Expected: PASS
-

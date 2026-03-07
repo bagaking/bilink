@@ -4,7 +4,7 @@ required: false
 sop:
   - Read this doc before implementing service layer or CLI wiring changes.
   - Update this doc when command orchestration or output formats change.
-  - Regenerate must-sop.md after updating this doc.
+  - Refresh shared system pages after updating this doc.
 ---
 # Bilink CLI 完整实现设计
 

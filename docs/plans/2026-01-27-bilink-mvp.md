@@ -4,7 +4,7 @@ required: false
 sop:
   - Read this plan before implementing Bilink MVP tasks.
   - Update this plan when execution steps change.
-  - Regenerate must-sop.md after updating this doc.
+  - Refresh shared system pages after updating this doc.
 ---
 # Bilink MVP Implementation Plan
 

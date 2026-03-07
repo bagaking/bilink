@@ -1,42 +1,36 @@
 # Guidebook
 
-This guidebook is a reading map. Keep it stable and index-style; do not duplicate volatile details.
+This guidebook is the reading map for the shared knowledge root.
 
-## How to Use
-- First-time: read in order.
-- Afterward: jump to the relevant section.
-- When in doubt: follow system docs first.
+## Read First
 
-## Fast Path
-1) System docs
-- `docs/must-docs-taxonomy.md`
-- `docs/must-sop.md`
+- `must-guidebook.md`
+- `must-authority.md`
+- `must-sop.md`
+- `must-recall.md`
 
-2) Project intent and constraints
-- `openspec/project.md`
+## Shared Root
 
-3) Current changes or proposals
-- `openspec/changes/`
-- `openspec list` (CLI)
+- `docs`
 
-4) Build/run entrypoints
-- `Makefile` (lint/build)
-- `node scripts/generate-sop.mjs` (SOP regeneration)
+## What Lives Here
 
-## Deep Dives
-- Add domain-specific docs by category (norms, guidelines, notes).
-- Use taxonomy suffixes and keep ordering consistent.
-- `docs/notes-prd-bilink.md`
-- `docs/architecture-bilink-design.md`
-- `docs/plans/2026-01-27-bilink-mvp.md`
-- `docs/plans/2026-01-30-bilink-cli-design.md`
-- `docs/plans/2026-01-30-bilink-cli-implementation.md`
-- `docs/plans/2026-02-01-bilink-check-watch-ui.md`
+- shared checked-in knowledge for this repository
+- topic pages and topic directories
+- system pages for progressive loading
+- reusable-items governance and active catalogs when the repository uses them
 
-## Docs Maintenance
-- This guidebook must reference `docs/must-docs-taxonomy.md`.
-- When docs are added/renamed, update this guidebook.
-- Do not move system docs without updating `AGENTS.md`.
+## Reading Order
 
-## Response Footer
-- Every task response must end with `[[Bagakit.LivingDoc]] ...`.
+1. system pages
+2. topic landing pages or top-level pages
+3. deeper pages only when the task needs them
+
+## Current Shared Pages
+
+- `docs/architecture-bilink-design.md` — Bilink 设计文档（核心理念与架构）
+- `docs/norms-maintaining-reusable-items.md` — Maintaining Reusable Items
+- `docs/notes-prd-bilink.md` — PRD: Bilink 双向链接工具（MVP + Watch TUI）
+- `docs/notes-reusable-items-knowledge.md` — Reusable Items - Knowledge
+- `docs/plans` — plans
+- `docs/specs` — Specs

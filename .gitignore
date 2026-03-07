@@ -75,3 +75,7 @@ apps/**/package-lock.json
 .worktrees
 .agency
 .codex
+
+
+/bilink
+/.bilink
