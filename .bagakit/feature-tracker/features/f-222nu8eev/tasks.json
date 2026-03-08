@@ -5,7 +5,7 @@
     {
       "id": "T-001",
       "title": "Draft OpenSpec change for canonical edge model and refs/check behavior",
-      "status": "todo",
+      "status": "in_progress",
       "summary": "Create the OpenSpec proposal, design notes, task checklist, and bilink-cli spec deltas for the canonical edge model plus refs/check upgrade.",
       "gate_result": null,
       "last_gate_commands": [],

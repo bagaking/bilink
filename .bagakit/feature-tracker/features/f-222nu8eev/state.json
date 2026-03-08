@@ -4,13 +4,13 @@
   "title": "Canonical Edge Model and Refs/Check Upgrade",
   "slug": "canonical-edge-model-refs-check",
   "goal": "Define and plan Bilink's canonical link edge model, then use it to make refs/check report source-aware resolved and unresolved link relationships.",
-  "status": "proposal",
-  "workspace_mode": "proposal_only",
+  "status": "in_progress",
+  "workspace_mode": "worktree",
   "base_ref": "main",
-  "branch": "",
-  "worktree_name": "",
-  "worktree_path": "",
-  "current_task_id": null,
+  "branch": "featf-222nu8eev",
+  "worktree_name": "wt-f-222nu8eev",
+  "worktree_path": ".worktrees/wt-f-222nu8eev",
+  "current_task_id": "T-001",
   "counters": {
     "gate_fail_streak": 0,
     "no_progress_rounds": 0,
@@ -26,6 +26,14 @@
     {
       "action": "feat_created",
       "detail": "workspace_mode=proposal_only; base_ref=main; root_branch=main"
+    },
+    {
+      "action": "workspace_assigned",
+      "detail": "proposal_only -> worktree; root_branch=main"
+    },
+    {
+      "action": "task_started",
+      "detail": "T-001"
     }
   ]
 }
