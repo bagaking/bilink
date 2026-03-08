@@ -14,11 +14,11 @@
   "counters": {
     "gate_fail_streak": 0,
     "no_progress_rounds": 0,
-    "round_count": 1
+    "round_count": 2
   },
   "gate": {
     "last_result": "pass",
-    "last_task_id": "T-001",
+    "last_task_id": "T-002",
     "last_check_commands": [
       {
         "command": "go test ./...",
@@ -26,7 +26,7 @@
         "status": "pass"
       }
     ],
-    "last_log_path": ".bagakit/feature-tracker/features/f-222nu8eev/artifacts/gate-T-001-r1-0001.log"
+    "last_log_path": ".bagakit/feature-tracker/features/f-222nu8eev/artifacts/gate-T-002-r2-0001.log"
   },
   "history": [
     {
@@ -48,6 +48,18 @@
     {
       "action": "task_finished",
       "detail": "T-001 => done"
+    },
+    {
+      "action": "task_started",
+      "detail": "T-002"
+    },
+    {
+      "action": "task_gate",
+      "detail": "T-002 => pass"
+    },
+    {
+      "action": "task_finished",
+      "detail": "T-002 => done"
     }
   ]
 }

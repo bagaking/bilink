@@ -23,10 +23,16 @@
     {
       "id": "T-002",
       "title": "Validate and review the OpenSpec proposal",
-      "status": "todo",
+      "status": "done",
       "summary": "Run strict OpenSpec validation and review the proposed behavior against PRD, architecture, and the existing researcher topic before implementation starts.",
-      "gate_result": null,
-      "last_gate_commands": [],
+      "gate_result": "pass",
+      "last_gate_commands": [
+        {
+          "command": "go test ./...",
+          "exit_code": 0,
+          "status": "pass"
+        }
+      ],
       "last_commit_hash": null,
       "notes": [
         "Expected gate includes openspec validation plus feature-tracker validation."
