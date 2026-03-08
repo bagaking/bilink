@@ -5,10 +5,16 @@
     {
       "id": "T-001",
       "title": "Draft OpenSpec change for canonical edge model and refs/check behavior",
-      "status": "in_progress",
+      "status": "done",
       "summary": "Create the OpenSpec proposal, design notes, task checklist, and bilink-cli spec deltas for the canonical edge model plus refs/check upgrade.",
-      "gate_result": null,
-      "last_gate_commands": [],
+      "gate_result": "pass",
+      "last_gate_commands": [
+        {
+          "command": "go test ./...",
+          "exit_code": 0,
+          "status": "pass"
+        }
+      ],
       "last_commit_hash": null,
       "notes": [
         "Must include explicit non-goals for rename engine, watch state machine, block refs, and anchor auto-rewrite."
