@@ -21,9 +21,9 @@
     {
       "feat_id": "f-222nu8eev",
       "title": "Canonical Edge Model and Refs/Check Upgrade",
-      "status": "ready",
+      "status": "in_progress",
       "workspace_mode": "worktree",
-      "branch": "featf-222nu8eev",
+      "branch": "featf-222nu8eev-impl",
       "worktree_name": "wt-f-222nu8eev"
     }
   ],

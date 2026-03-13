@@ -4,21 +4,21 @@
   "title": "Canonical Edge Model and Refs/Check Upgrade",
   "slug": "canonical-edge-model-refs-check",
   "goal": "Define and plan Bilink's canonical link edge model, then use it to make refs/check report source-aware resolved and unresolved link relationships.",
-  "status": "ready",
+  "status": "in_progress",
   "workspace_mode": "worktree",
   "base_ref": "main",
-  "branch": "featf-222nu8eev",
+  "branch": "featf-222nu8eev-impl",
   "worktree_name": "wt-f-222nu8eev",
   "worktree_path": ".worktrees/wt-f-222nu8eev",
-  "current_task_id": null,
+  "current_task_id": "T-004",
   "counters": {
     "gate_fail_streak": 0,
     "no_progress_rounds": 0,
-    "round_count": 2
+    "round_count": 3
   },
   "gate": {
     "last_result": "pass",
-    "last_task_id": "T-002",
+    "last_task_id": "T-003",
     "last_check_commands": [
       {
         "command": "go test ./...",
@@ -26,7 +26,7 @@
         "status": "pass"
       }
     ],
-    "last_log_path": ".bagakit/feature-tracker/features/f-222nu8eev/artifacts/gate-T-002-r2-0001.log"
+    "last_log_path": ".bagakit/feature-tracker/features/f-222nu8eev/artifacts/gate-T-003-r3-0001.log"
   },
   "history": [
     {
@@ -60,6 +60,22 @@
     {
       "action": "task_finished",
       "detail": "T-002 => done"
+    },
+    {
+      "action": "task_started",
+      "detail": "T-003"
+    },
+    {
+      "action": "task_gate",
+      "detail": "T-003 => pass"
+    },
+    {
+      "action": "task_finished",
+      "detail": "T-003 => done"
+    },
+    {
+      "action": "task_started",
+      "detail": "T-004"
     }
   ]
 }

@@ -41,10 +41,16 @@
     {
       "id": "T-003",
       "title": "Implement canonical edge model after approval",
-      "status": "todo",
+      "status": "done",
       "summary": "Implement the shared edge schema and resolver only after the OpenSpec change is approved.",
-      "gate_result": null,
-      "last_gate_commands": [],
+      "gate_result": "pass",
+      "last_gate_commands": [
+        {
+          "command": "go test ./...",
+          "exit_code": 0,
+          "status": "pass"
+        }
+      ],
       "last_commit_hash": null,
       "notes": [
         "Use TDD fixtures for relative Markdown targets, duplicate basenames, unresolved links, anchors, and source-aware refs."
@@ -53,7 +59,7 @@
     {
       "id": "T-004",
       "title": "Upgrade refs and check on top of canonical edges",
-      "status": "todo",
+      "status": "in_progress",
       "summary": "Make refs/check consume canonical edges and emit source-aware JSON/text diagnostics for resolved, unresolved, and ambiguous explicit links.",
       "gate_result": null,
       "last_gate_commands": [],
