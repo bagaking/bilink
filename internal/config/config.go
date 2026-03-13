@@ -98,6 +98,7 @@ func Load(opts ConfigOpts) (Config, error) {
 	data, err := os.ReadFile(configPath)
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) && !explicitConfig {
+			cfg.Index.Path = resolveDefaultConfigIndexPath(configRoot, cfg.Index.Path)
 			return cfg, nil
 		}
 		return Config{}, err
@@ -116,6 +117,9 @@ func Load(opts ConfigOpts) (Config, error) {
 	if !explicitConfig && configRoot != "" && fileRoots.Workspace.Roots != nil {
 		cfg.Workspace.Roots = resolveDefaultConfigRoots(configRoot, cfg.Workspace.Roots)
 	}
+	if !explicitConfig {
+		cfg.Index.Path = resolveDefaultConfigIndexPath(configRoot, cfg.Index.Path)
+	}
 	return cfg, nil
 }
 
@@ -129,4 +133,11 @@ func resolveDefaultConfigRoots(configRoot string, roots []string) []string {
 		resolved = append(resolved, filepath.Join(configRoot, root))
 	}
 	return resolved
+}
+
+func resolveDefaultConfigIndexPath(configRoot string, indexPath string) string {
+	if indexPath == "" || filepath.IsAbs(indexPath) {
+		return indexPath
+	}
+	return filepath.Join(configRoot, indexPath)
 }

@@ -59,6 +59,40 @@ roots = ["."]
 	}
 }
 
+func TestLoadConfig_DefaultPathResolvesRelativeIndexPath(t *testing.T) {
+	dir := t.TempDir()
+	cfgDir := filepath.Join(dir, ".bilink")
+	if err := os.MkdirAll(cfgDir, 0o755); err != nil {
+		t.Fatalf("mkdir config dir: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(cfgDir, "settings.toml"), []byte(`
+[index]
+path = ".bilink/custom-index.json"
+`), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+	cfg, err := Load(ConfigOpts{Roots: []string{dir}})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	expected := filepath.Join(dir, ".bilink", "custom-index.json")
+	if cfg.Index.Path != expected {
+		t.Fatalf("expected relative index path resolved under default root, got %q", cfg.Index.Path)
+	}
+}
+
+func TestLoadConfig_DefaultMissingConfigResolvesIndexPathUnderRoot(t *testing.T) {
+	dir := t.TempDir()
+	cfg, err := Load(ConfigOpts{Roots: []string{dir}})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	expected := filepath.Join(dir, ".bilink", "index.json")
+	if cfg.Index.Path != expected {
+		t.Fatalf("expected default index path resolved under default root, got %q", cfg.Index.Path)
+	}
+}
+
 func TestLoadConfig_DefaultPathPreservesCLIWorkspaceRootsWhenFileOmitsWorkspace(t *testing.T) {
 	dir := t.TempDir()
 	cfgDir := filepath.Join(dir, ".bilink")
@@ -146,5 +180,23 @@ extensions = [".mdx"]
 	}
 	if len(cfg.Scan.Extensions) != 1 || cfg.Scan.Extensions[0] != ".mdx" {
 		t.Fatalf("expected explicit relative config extensions, got %#v", cfg.Scan.Extensions)
+	}
+}
+
+func TestLoadConfig_ExplicitConfigPreservesRelativeIndexPath(t *testing.T) {
+	dir := t.TempDir()
+	cfgPath := filepath.Join(dir, "settings.toml")
+	if err := os.WriteFile(cfgPath, []byte(`
+[index]
+path = ".bilink/custom-index.json"
+`), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+	cfg, err := Load(ConfigOpts{Roots: []string{dir}, ConfigPath: cfgPath})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	if cfg.Index.Path != ".bilink/custom-index.json" {
+		t.Fatalf("expected explicit config to preserve relative index path, got %q", cfg.Index.Path)
 	}
 }
