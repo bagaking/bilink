@@ -39,7 +39,7 @@ Bilink 想解决 4 类问题：
 当前行为里有几个需要明确知道的边界：
 - `--interactive` 目前只会跳过歧义拦截，不提供交互选择器。
 - `watch` 当前更接近“一次 index diff + TUI 展示”，不是长期驻留的文件系统监听器。
-- 配置能力已经有，但当前使用时建议显式传 `--config`，不要假设默认配置路径一定会被读取。
+- 未显式传 `--config` 时，CLI 会读取第一个 `--root` 下的 `.bilink/settings.toml`；显式 `--config` 仍然优先。
 - Node 包装器代码已经在仓库里，但它依赖匹配的 GitHub Releases 资产，不应把它当成已验证发布链路。
 
 ## 快速开始
@@ -63,13 +63,13 @@ extensions = [".md", ".markdown", ".mdx"]
 EOF
 ```
 
-然后显式传配置运行：
+然后运行命令。未传 `--config` 时，默认读取 `--root` 下的 `.bilink/settings.toml`：
 
 ```bash
-./bilink refs --root . --config .bilink/settings.toml path/to/file.md
-./bilink check --root . --config .bilink/settings.toml
-./bilink rename --root . --config .bilink/settings.toml old.md new.md
-./bilink watch --root . --config .bilink/settings.toml
+./bilink refs --root . path/to/file.md
+./bilink check --root .
+./bilink rename --root . old.md new.md
+./bilink watch --root .
 ```
 
 常用参数：
