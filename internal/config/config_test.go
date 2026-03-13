@@ -63,3 +63,46 @@ extensions = [".md"]
 		t.Fatalf("expected override extensions, got %#v", cfg.Scan.Extensions)
 	}
 }
+
+func TestLoadConfig_ExplicitRelativePathUsesWorkingDirectory(t *testing.T) {
+	dir := t.TempDir()
+	workspace := filepath.Join(dir, "workspace")
+	cfgDir := filepath.Join(workspace, ".bilink")
+	if err := os.MkdirAll(cfgDir, 0o755); err != nil {
+		t.Fatalf("mkdir config dir: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(cfgDir, "settings.toml"), []byte(`
+[scan]
+extensions = [".md"]
+`), 0o644); err != nil {
+		t.Fatalf("write workspace config: %v", err)
+	}
+
+	wd := t.TempDir()
+	if err := os.WriteFile(filepath.Join(wd, "settings.toml"), []byte(`
+[scan]
+extensions = [".mdx"]
+`), 0o644); err != nil {
+		t.Fatalf("write explicit config: %v", err)
+	}
+	oldWD, err := os.Getwd()
+	if err != nil {
+		t.Fatalf("getwd: %v", err)
+	}
+	if err := os.Chdir(wd); err != nil {
+		t.Fatalf("chdir: %v", err)
+	}
+	t.Cleanup(func() {
+		if err := os.Chdir(oldWD); err != nil {
+			t.Fatalf("restore wd: %v", err)
+		}
+	})
+
+	cfg, err := Load(ConfigOpts{Roots: []string{workspace}, ConfigPath: "settings.toml"})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	if len(cfg.Scan.Extensions) != 1 || cfg.Scan.Extensions[0] != ".mdx" {
+		t.Fatalf("expected explicit relative config extensions, got %#v", cfg.Scan.Extensions)
+	}
+}
