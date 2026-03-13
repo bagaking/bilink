@@ -171,3 +171,7 @@ export BAGAKIT_LIVING_KNOWLEDGE_SKILL_DIR="<path-to-bagakit-living-knowledge-ski
 sh "$BAGAKIT_LIVING_KNOWLEDGE_SKILL_DIR/scripts/bagakit-living-knowledge.sh" index --root .
 git diff --exit-code docs/must-guidebook.md docs/must-sop.md
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
