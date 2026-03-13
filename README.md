@@ -160,6 +160,12 @@ requiredForWatch = true
 代码质量门禁：
 
 ```bash
+make check
+```
+
+`make check` runs the same local gates used by CI:
+
+```bash
 make lint
 make test
 ```

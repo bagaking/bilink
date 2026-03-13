@@ -30,8 +30,5 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
 
-      - name: Test
-        run: make test
-
-      - name: Lint
-        run: make lint
+      - name: Check
+        run: make check

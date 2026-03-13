@@ -4,7 +4,7 @@ PNPM ?= pnpm
 export CODEX_HOME := $(PWD)/.codex
 export CODEX_HOME_PUB := $(PWD)/.codex_pub
 
-.PHONY: lint build test editor-install editor-dev editor-test editor-test-e2e editor-package editor-package-dir
+.PHONY: lint build test check editor-install editor-dev editor-test editor-test-e2e editor-package editor-package-dir
 
 # Lint/check basics: catches unused imports via build and common vet checks
 lint:
@@ -29,6 +29,8 @@ test:
 	@if [ -d packages/bilink-npx/test ]; then \
 		node --test packages/bilink-npx/test/*.mjs; \
 	fi
+
+check: lint test
 
 editor-install:
 	cd apps/editor && $(PNPM) install
