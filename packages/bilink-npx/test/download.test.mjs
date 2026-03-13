@@ -41,6 +41,23 @@ test("download follows redirects and writes final body", async () => {
   await rm(dir, { recursive: true, force: true });
 });
 
+test("download follows see-other redirects and writes final body", async () => {
+  const { dir, file } = await tempPath("bilink");
+  await withServer((req, res) => {
+    if (req.url === new URL("see-other", "http://test.invalid").pathname) {
+      res.writeHead(303, { location: new URL("binary", "http://test.invalid").pathname });
+      res.end();
+      return;
+    }
+    res.writeHead(200);
+    res.end("see-other-body");
+  }, async (baseUrl) => {
+    await download(new URL("see-other", `${baseUrl}/`).toString(), file);
+  });
+  assert.equal(await readFile(file, "utf8"), "see-other-body");
+  await rm(dir, { recursive: true, force: true });
+});
+
 test("download failure removes temporary file and leaves no empty cache", async () => {
   const { dir, file } = await tempPath("bilink");
   await assert.rejects(

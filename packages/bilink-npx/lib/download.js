@@ -6,7 +6,7 @@ import https from "node:https";
 import path from "node:path";
 import { pipeline } from "node:stream/promises";
 
-const REDIRECT_CODES = new Set([301, 302, 307, 308]);
+const REDIRECT_CODES = new Set([301, 302, 303, 307, 308]);
 
 export async function ensureBinary(binPath, url) {
   let needsDownload = false;
