@@ -1,5 +1,7 @@
 package watch
 
+import "sort"
+
 type Index struct{ Files []string }
 
 type DiffResult struct {
@@ -28,5 +30,7 @@ func Diff(oldIdx, newIdx Index) DiffResult {
 			removed = append(removed, f)
 		}
 	}
+	sort.Strings(added)
+	sort.Strings(removed)
 	return DiffResult{Added: added, Removed: removed}
 }

@@ -41,6 +41,22 @@ func TestBuildIndexStableAcrossInputOrder(t *testing.T) {
 	}
 }
 
+func TestBuildIndexDuplicateBasenameUsesLexicographicPathWinner(t *testing.T) {
+	files := []FileInput{
+		{Path: "roots/z/same.md", Content: "Hi"},
+		{Path: "roots/a/same.md", Content: "Hi"},
+		{Path: "source.md", Content: "See [[same]]"},
+	}
+
+	idx := Build(files)
+	if got := len(idx.Inbound["roots/a/same.md"]); got != 1 {
+		t.Fatalf("expected lexicographic path winner to receive inbound link, got %d", got)
+	}
+	if got := len(idx.Inbound["roots/z/same.md"]); got != 0 {
+		t.Fatalf("expected later lexicographic duplicate basename to receive no inbound links, got %d", got)
+	}
+}
+
 func mustJSON(t *testing.T, idx Index) string {
 	t.Helper()
 	data, err := json.Marshal(idx)
