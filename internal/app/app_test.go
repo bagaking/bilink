@@ -28,6 +28,9 @@ func TestRunRefsLoadsDefaultConfigFromRoot(t *testing.T) {
 		t.Fatalf("mkdir config dir: %v", err)
 	}
 	if err := os.WriteFile(filepath.Join(cfgDir, "settings.toml"), []byte(`
+[workspace]
+roots = ["."]
+
 [scan]
 extensions = [".txt"]
 `), 0o644); err != nil {

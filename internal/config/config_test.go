@@ -38,6 +38,48 @@ extensions = [".md"]
 	}
 }
 
+func TestLoadConfig_DefaultPathResolvesRelativeWorkspaceRoots(t *testing.T) {
+	dir := t.TempDir()
+	cfgDir := filepath.Join(dir, ".bilink")
+	if err := os.MkdirAll(cfgDir, 0o755); err != nil {
+		t.Fatalf("mkdir config dir: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(cfgDir, "settings.toml"), []byte(`
+[workspace]
+roots = ["."]
+`), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+	cfg, err := Load(ConfigOpts{Roots: []string{dir}})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	if len(cfg.Workspace.Roots) != 1 || cfg.Workspace.Roots[0] != dir {
+		t.Fatalf("expected relative root resolved under config root, got %#v", cfg.Workspace.Roots)
+	}
+}
+
+func TestLoadConfig_DefaultPathPreservesCLIWorkspaceRootsWhenFileOmitsWorkspace(t *testing.T) {
+	dir := t.TempDir()
+	cfgDir := filepath.Join(dir, ".bilink")
+	if err := os.MkdirAll(cfgDir, 0o755); err != nil {
+		t.Fatalf("mkdir config dir: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(cfgDir, "settings.toml"), []byte(`
+[scan]
+extensions = [".md"]
+`), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+	cfg, err := Load(ConfigOpts{Roots: []string{dir}})
+	if err != nil {
+		t.Fatalf("expected nil error, got %v", err)
+	}
+	if len(cfg.Workspace.Roots) != 1 || cfg.Workspace.Roots[0] != dir {
+		t.Fatalf("expected CLI root preserved, got %#v", cfg.Workspace.Roots)
+	}
+}
+
 func TestLoadConfig_ExplicitMissingErrors(t *testing.T) {
 	dir := t.TempDir()
 	_, err := Load(ConfigOpts{ConfigPath: filepath.Join(dir, "missing.toml")})

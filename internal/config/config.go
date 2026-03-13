@@ -86,11 +86,13 @@ func Load(opts ConfigOpts) (Config, error) {
 	}
 	configPath := opts.ConfigPath
 	explicitConfig := configPath != ""
+	configRoot := ""
 	if configPath == "" {
 		root := "."
 		if len(cfg.Workspace.Roots) > 0 {
 			root = cfg.Workspace.Roots[0]
 		}
+		configRoot = root
 		configPath = filepath.Join(root, ".bilink", "settings.toml")
 	}
 	data, err := os.ReadFile(configPath)
@@ -100,8 +102,31 @@ func Load(opts ConfigOpts) (Config, error) {
 		}
 		return Config{}, err
 	}
+	var fileRoots struct {
+		Workspace struct {
+			Roots []string `toml:"roots"`
+		} `toml:"workspace"`
+	}
+	if err := toml.Unmarshal(data, &fileRoots); err != nil {
+		return Config{}, err
+	}
 	if err := toml.Unmarshal(data, &cfg); err != nil {
 		return Config{}, err
 	}
+	if !explicitConfig && configRoot != "" && fileRoots.Workspace.Roots != nil {
+		cfg.Workspace.Roots = resolveDefaultConfigRoots(configRoot, cfg.Workspace.Roots)
+	}
 	return cfg, nil
+}
+
+func resolveDefaultConfigRoots(configRoot string, roots []string) []string {
+	resolved := make([]string, 0, len(roots))
+	for _, root := range roots {
+		if filepath.IsAbs(root) {
+			resolved = append(resolved, root)
+			continue
+		}
+		resolved = append(resolved, filepath.Join(configRoot, root))
+	}
+	return resolved
 }
