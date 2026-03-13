@@ -2,6 +2,7 @@ package index
 
 import (
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/bagaking/bilink/internal/parse"
@@ -20,6 +21,7 @@ type Index struct {
 }
 
 func Build(files []FileInput) Index {
+	files = sortedFiles(files)
 	idx := Index{Outbound: map[string][]parse.Link{}, Inbound: map[string][]parse.Link{}}
 	nameToPath := map[string]string{}
 	for _, f := range files {
@@ -44,4 +46,12 @@ func Build(files []FileInput) Index {
 		}
 	}
 	return idx
+}
+
+func sortedFiles(files []FileInput) []FileInput {
+	sorted := append([]FileInput(nil), files...)
+	sort.Slice(sorted, func(i, j int) bool {
+		return sorted[i].Path < sorted[j].Path
+	})
+	return sorted
 }

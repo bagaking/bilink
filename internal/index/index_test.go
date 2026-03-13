@@ -1,6 +1,7 @@
 package index
 
 import (
+	"encoding/json"
 	"testing"
 
 	"github.com/bagaking/bilink/internal/parse"
@@ -22,4 +23,29 @@ func TestBuildIndex(t *testing.T) {
 		t.Fatalf("unexpected link %#v", idx.Outbound["a.md"][0])
 	}
 	_ = parse.Link{}
+}
+
+func TestBuildIndexStableAcrossInputOrder(t *testing.T) {
+	files := []FileInput{
+		{Path: "z.md", Content: "See [[same]]"},
+		{Path: "a.md", Content: "See [[same]]"},
+		{Path: "dir/same.md", Content: "Hi"},
+		{Path: "same.md", Content: "Hi"},
+	}
+	reversed := []FileInput{files[3], files[2], files[1], files[0]}
+
+	forward := mustJSON(t, Build(files))
+	backward := mustJSON(t, Build(reversed))
+	if forward != backward {
+		t.Fatalf("expected stable index output across input order\nforward:  %s\nbackward: %s", forward, backward)
+	}
+}
+
+func mustJSON(t *testing.T, idx Index) string {
+	t.Helper()
+	data, err := json.Marshal(idx)
+	if err != nil {
+		t.Fatalf("marshal index: %v", err)
+	}
+	return string(data)
 }
